@@ -3,95 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张明 | Researcher</title>
+    <title>Chenxiao Zhang | 张晨晓</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Georgia', serif;
-            max-width: 800px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
-            color: #333;
+            padding: 50px 25px;
+            color: #2c3e50;
             line-height: 1.8;
+            background: #fdfdfd;
         }
         .header {
             display: flex;
             align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 35px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
         }
         .header img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
+            border: 3px solid #ddd;
         }
-        h1 { font-size: 28px; margin-bottom: 5px; }
-        .subtitle { color: #666; font-size: 16px; }
-        h2 {
-            font-size: 20px;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
+        .header-info h1 {
+            font-size: 30px;
+            margin-bottom: 4px;
+            color: #1a1a2e;
         }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .pub { margin-bottom: 12px; }
-        .pub .title { font-weight: bold; }
-        .links { margin-top: 10px; }
+        .header-info .cn-name {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .header-info .affiliation {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
         .links a {
-            margin-right: 15px;
-            background: #f0f0f0;
-            padding: 3px 10px;
-            border-radius: 3px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 6px;
+            padding: 4px 14px;
+            background: #eef2f7;
+            border-radius: 5px;
+            color: #2c5aa0;
+            text-decoration: none;
             font-size: 14px;
+            transition: background 0.2s;
+        }
+        .links a:hover { background: #d4e0f0; }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 18px;
+            color: #1a1a2e;
+            border-left: 4px solid #2c5aa0;
+            padding-left: 12px;
+        }
+        .about p { margin-bottom: 12px; }
+        .research-tags span {
+            display: inline-block;
+            background: #e8f4e8;
+            color: #2d6a2d;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        .pub-list { margin-top: 10px; }
+        .pub-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a1a2e;
+            margin-bottom: 3px;
+        }
+        .pub-authors {
+            font-size: 14px;
+            color: #555;
+        }
+        .pub-authors b { color: #2c5aa0; }
+        .pub-venue {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+        }
+        .pub-year {
+            display: inline-block;
+            background: #2c5aa0;
+            color: white;
+            padding: 1px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+        .pub-cite {
+            font-size: 12px;
+            color: #999;
+        }
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: #f7f9fc;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-box .num {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        .stat-box .label {
+            font-size: 13px;
+            color: #888;
+        }
+        .edu-item {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #ddd;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+        }
+        @media (max-width: 600px) {
+            .header { flex-direction: column; text-align: center; }
+            .stats { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
+<!-- ====== 头部信息 ====== -->
 <div class="header">
-    <!-- 把这个换成你的照片链接 -->
-    <img src="https://via.placeholder.com/150" alt="照片">
-    <div>
-        <h1>张明 (Ming Zhang)</h1>
-        <p class="subtitle">Ph.D. Student</p>
-        <p class="subtitle">Department of Computer Science, XX University</p>
-        <div class="links" style="margin-top:10px">
-            <a href="mailto:your@email.com">Email</a>
-            <a href="https://scholar.google.com/">Google Scholar</a>
-            <a href="https://github.com/your-username">GitHub</a>
+    <img src="photo.jpg" alt="Chenxiao Zhang">
+    <div class="header-info">
+        <h1>Chenxiao Zhang</h1>
+        <p class="cn-name">张晨晓</p>
+        <p class="affiliation">
+            Associate Researcher (特聘副研究员)<br>
+            School of Remote Sensing and Information Engineering<br>
+            Wuhan University, China
+        </p>
+        <div class="links">
+            <a href="mailto:cxzhang@whu.edu.cn">📧 Email</a>
+            <a href="https://scholar.google.com/citations?user=ysW1FQoAAAAJ">🎓 Google Scholar</a>
+            <a href="https://github.com/GeoZcx">💻 GitHub</a>
         </div>
     </div>
 </div>
 
-<h2>About</h2>
-<p>
-    I am a Ph.D. student at XX University, advised by 
-    <a href="#">Prof. XX</a>. My research interests include 
-    XXX, XXX, and XXX.
+<!-- ====== 简介 ====== -->
+<h2>About Me</h2>
+<div class="about">
+    <p>
+        I am an Associate Researcher (特聘副研究员) at the 
+        <a href="https://rsgis.whu.edu.cn/" target="_blank">School of Remote Sensing and Information Engineering</a>, 
+        <a href="https://www.whu.edu.cn/" target="_blank">Wuhan University</a>. 
+        My research focuses on <strong>GeoSpatial Artificial Intelligence (GeoAI)</strong>, 
+        with a particular emphasis on leveraging deep learning techniques for remote sensing image understanding, 
+        change detection, and geospatial data mining.
+    </p>
+</div>
+
+<div class="research-tags" style="margin-top: 12px;">
+    <span>GeoSpatial AI</span>
+    <span>Remote Sensing</span>
+    <span>Deep Learning</span>
+    <span>Change Detection</span>
+    <span>GIS</span>
+    <span>Data Mining</span>
+    <span>Pattern Recognition</span>
+</div>
+
+<!-- ====== 引用统计 ====== -->
+<h2>Citation Statistics</h2>
+<div class="stats">
+    <div class="stat-box">
+        <div class="num">1900+</div>
+        <div class="label">Total Citations</div>
+    </div>
+    <div class="stat-box">
+        <div class="num">15</div>
+        <div class="label">h-index</div>
+    </div>
+    <div class="stat-box">
+        <div class="num">16</div>
+        <div class="label">i10-index</div>
+    </div>
+</div>
+
+<!-- ====== 代表性论文 ====== -->
+<h2>Selected Publications</h2>
+<div class="pub-list">
+
+    <div class="pub-item">
+        <p class="pub-title">A deeply supervised image fusion network for change detection in high resolution bi-temporal remote sensing images</p>
+        <p class="pub-authors"><b>C. Zhang</b>, P. Yue, D. Tapete, L. Jiang, B. Shangguan, L. Huang, G. Liu</p>
+        <p class="pub-venue"><span class="pub-year">2020</span> ISPRS Journal of Photogrammetry and Remote Sensing, 166, 183-200</p>
+        <p class="pub-cite">📌 Cited by 1255</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">A multi-level context-guided classification method with object-based convolutional neural network for land cover classification using very high resolution remote sensing images</p>
+        <p class="pub-authors"><b>C. Zhang</b>, P. Yue, D. Tapete, B. Shangguan, M. Wang, Z. Wu</p>
+        <p class="pub-venue"><span class="pub-year">2020</span> International Journal of Applied Earth Observation and Geoinformation, 88, 102086</p>
+        <p class="pub-cite">📌 Cited by 115</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">A domain adaptation neural network for change detection with heterogeneous optical and SAR remote sensing images</p>
+        <p class="pub-authors"><b>C. Zhang</b>, Y. Feng, L. Hu, D. Tapete, L. Pan, Z. Liang, F. Cigna, P. Yue</p>
+        <p class="pub-venue"><span class="pub-year">2022</span> International Journal of Applied Earth Observation and Geoinformation, 109</p>
+        <p class="pub-cite">📌 Cited by 105</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Automatic identification of center pivot irrigation systems from Landsat images using convolutional neural networks</p>
+        <p class="pub-authors"><b>C. Zhang</b>, P. Yue, L. Di, Z. Wu</p>
+        <p class="pub-venue"><span class="pub-year">2018</span> Agriculture, 8(10), 147</p>
+        <p class="pub-cite">📌 Cited by 74</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">SDCluster: A clustering based self-supervised pre-training method for semantic segmentation of remote sensing images</p>
+        <p class="pub-authors">H. Xu, <b>C. Zhang</b>, P. Yue, K. Wang</p>
+        <p class="pub-venue"><span class="pub-year">2025</span> ISPRS Journal of Photogrammetry and Remote Sensing, 223, 1-14</p>
+        <p class="pub-cite">📌 Cited by 15</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Automatic generation of high-quality building samples using OpenStreetMap and deep learning</p>
+        <p class="pub-authors">M. Zhao, <b>C. Zhang</b>, Z. Gu, Z. Cao, C. Cai, Z. Wu, L. He</p>
+        <p class="pub-venue"><span class="pub-year">2025</span> International Journal of Applied Earth Observation and Geoinformation, 139</p>
+        <p class="pub-cite">📌 Cited by 4</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">MDA-RSM: Multi-directional adaptive remote sensing Mamba for building extraction</p>
+        <p class="pub-authors">M. Zhao, <b>C. Zhang</b>, P. Yue, C. Cai, F. Ye</p>
+        <p class="pub-venue"><span class="pub-year">2025</span> GIScience &amp; Remote Sensing, 62(1), 2568776</p>
+        <p class="pub-cite">📌 Cited by 3</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">OCA: Object-based Change Augmentation for Few Shot Building Change Detection in VHR Remote Sensing images</p>
+        <p class="pub-authors"><b>C. Zhang</b>, P. Yue, F. Cigna, D. Tapete</p>
+        <p class="pub-venue"><span class="pub-year">2025</span> IEEE Transactions on Geoscience and Remote Sensing</p>
+        <p class="pub-cite">📌 Cited by 2</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Toward unsupervised building extraction from very high-resolution remote sensing images using SAM and CLIP</p>
+        <p class="pub-authors"><b>C. Zhang</b>, P. Yue</p>
+        <p class="pub-venue"><span class="pub-year">2025</span> GIScience &amp; Remote Sensing, 62(1)</p>
+        <p class="pub-cite">📌 Cited by 2</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Geospatial knowledge cube: enhancing semantic query in geospatial data cubes with ontology and LLMs</p>
+        <p class="pub-authors">Y. Wei, <b>C. Zhang</b>, P. Yue, H. Li</p>
+        <p class="pub-venue"><span class="pub-year">2026</span> International Journal of Geographical Information Science, 1-32</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Enhancing FAIR data services in agricultural disaster: A review</p>
+        <p class="pub-authors">L. Hu, <b>C. Zhang</b>, M. Zhang, Y. Shi, J. Lu, Z. Fang</p>
+        <p class="pub-venue"><span class="pub-year">2023</span> Remote Sensing, 15(8), 2024</p>
+        <p class="pub-cite">📌 Cited by 37</p>
+    </div>
+
+    <div class="pub-item">
+        <p class="pub-title">Spatio-temporal intention learning for recommendation of next point-of-interest</p>
+        <p class="pub-authors">H. Li, P. Yue, S. Li, <b>C. Zhang</b>, C. Yang</p>
+        <p class="pub-venue"><span class="pub-year">2024</span> Geo-spatial Information Science, 27(2), 384-397</p>
+        <p class="pub-cite">📌 Cited by 18</p>
+    </div>
+
+</div>
+
+<p style="margin-top: 15px; font-size: 14px; color: #888;">
+    📄 Full publication list available on 
+    <a href="https://scholar.google.com/citations?user=ysW1FQoAAAAJ" target="_blank">Google Scholar</a>.
 </p>
 
-<h2>Publications</h2>
-
-<div class="pub">
-    <p class="title">Your Paper Title Here</p>
-    <p><b>Ming Zhang</b>, Coauthor One, Coauthor Two</p>
-    <p>Conference Name (e.g., NeurIPS 2025)</p>
-    <p><a href="#">[Paper]</a> <a href="#">[Code]</a></p>
+<!-- ====== 学术服务（可选，你可以自行补充） ====== -->
+<!--
+<h2>Academic Service</h2>
+<div class="about">
+    <p>Reviewer for: ISPRS Journal, IEEE TGRS, JAG, Remote Sensing...</p>
 </div>
+-->
 
-<div class="pub">
-    <p class="title">Another Paper Title</p>
-    <p>Coauthor One, <b>Ming Zhang</b>, Coauthor Two</p>
-    <p>Journal Name, 2024</p>
-    <p><a href="#">[Paper]</a></p>
-</div>
-
-<h2>Education</h2>
-<p>🎓 Ph.D. in Computer Science, XX University, 2022 - Present</p>
-<p>🎓 B.S. in Computer Science, XX University, 2018 - 2022</p>
+<!-- ====== 页脚 ====== -->
+<footer>
+    <p>&copy; 2026 Chenxiao Zhang | Wuhan University</p>
+</footer>
 
 </body>
 </html>
